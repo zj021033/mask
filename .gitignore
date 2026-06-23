@@ -1,0 +1,13 @@
+# OS / 编辑器
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# 依赖 / 构建产物（目前用不到，预留）
+node_modules/
+dist/
+
+# 本地状态：更新提醒标记存在用户 home，不在本仓库；此处仅防误放
+.mask-last-seen
