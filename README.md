@@ -1,65 +1,61 @@
-# 🎭 mask — 给 AI 文案戴上名角色的面具
+# 🎭 mask — write in the unmistakable voice of a famous character
 
-> 同一句话，五个面具，五种味。彻底告别"AI 腔"。
+**English** | [中文](./README.zh.md)
 
-AI 写的文案总有股"AI 味"：要么太刚，要么太柔，没有真人那种不卑不亢、有性格有分寸的感觉。
+> One sentence, many masks, many voices. Kill the "AI tone" for good.
 
-`mask` 是一个 [Claude Code](https://claude.com/claude-code) skill。你指定"用某个角色的口吻写/改写"，它就调出那个角色的**语言指纹**（自称、口头禅、句式、用词），让输出一眼认出是谁。
+AI-written copy always has a tell: too stiff or too soft, never the lived-in voice of a real person with an actual personality.
 
-## 一眼看懂它能干嘛
+`mask` is a [Claude Code](https://claude.com/claude-code) skill. You ask it to write or rewrite copy *in the voice of* a character, and it pulls that character's **linguistic fingerprint** (self-reference, catchphrases, sentence rhythm, diction) so the output is instantly recognizable.
 
-同一句平庸文案 ——「**感谢各位今天的参与，大家辛苦了，我们下次再聊。**」
+## See it in one glance
 
-| 面具 | 改写后 |
+The same flat line — **"Thanks everyone for joining today, you all worked hard, let's talk again next time."**
+
+| Mask | Rewritten |
 |---|---|
-| 🐵 **孙悟空** | 今儿这场都给力！这点事在俺老孙眼里不算啥——散了散了，下回有难处尽管喊老孙！ |
-| 🐷 **猪八戒** | 哎哟可算完事了！老猪这肚子早咕咕叫，今儿都辛苦，改天搓一顿接着唠——散会散会！ |
-| 🧘 **唐僧** | 诸位施主今日辛苦了，贫僧在此谢过。缘分未尽，来日方长，后会有期——阿弥陀佛，善哉善哉。 |
-| 🐂 **牛魔王** | 今日诸位赏脸，我记下这份情。都散了罢，往后有事招呼一声——看在故旧之情，自当照应。 |
-| 🔥 **红孩儿** | 今儿就到这儿！跟着小爷混亏不了你们——都散了，下回有硬仗，尽管来叫你孩儿这把火！ |
+| 🕵️ **Sherlock Holmes** | Thank you — though I observe the real work has scarcely begun. The untouched agenda, the two who slipped out early: we reconvene, and next time we finish what we start. Elementary. |
+| 🟢 **Yoda** | Grateful, I am. Worked hard today, you all have. Meet again, we shall — much left to do, there is. Hmm. |
+| 🎭 **Shakespeare** | I thank thee, gentles all, for this day's labour. 'Tis but a pause, not an end; anon we shall convene again, and speak further upon these matters. |
 
-## 怎么用
+> Chinese audience? See the [中文 README](./README.zh.md) for the 西游记 / 红楼梦 / 三国 / 水浒 characters.
 
-装好后，直接对 Claude Code 说：
+## How to use
+
+After installing, just tell Claude Code:
 
 ```
-用猪八戒的口吻改写这段：<你的文案>
-用孙悟空的口吻写条朋友圈，主题是搬家
-以唐僧的语气写一封请假邮件
+write like Sherlock Holmes: <your copy>
+rewrite this in the voice of Yoda: <your copy>
+draft a thank-you note as Shakespeare
 ```
 
-支持两种模式：**新写**（从零产出）和 **改写**（保留原意换腔调）。
+Two modes: **write fresh** or **rewrite** (keep the meaning, swap the voice).
 
-## 当前角色（v1.0.0）
+## Characters (v1.1.0)
 
-《西游记》5 个识别度最高的：
+**English:** Sherlock Holmes · Yoda · Shakespeare
 
-| 角色 | 一眼认出的点 |
-|---|---|
-| 孙悟空 | 傲娇毒舌、自报名号、天不怕地不怕 |
-| 猪八戒 | 摸鱼反内卷、"老猪"、散伙学、人间清醒 |
-| 唐僧 | 婆妈说教、阿弥陀佛、念紧箍咒 |
-| 牛魔王 | 妖界大哥气、讲辈分义气、护家要面子 |
-| 红孩儿 | 妖二代中二、三昧真火、占辈分便宜 |
+**中文 (Chinese):** 孙悟空 · 猪八戒 · 唐僧 · 牛魔王 · 红孩儿 · 林黛玉 · 王熙凤 · 张飞 · 诸葛亮 · 鲁智深
 
-> 路线图：四大名著其余角色（林黛玉、张飞、王熙凤…）→ 西方原型（Sherlock、Yoda…）的英文版。
+> Match the language to the culture: Chinese copy uses the Chinese characters; English copy uses the English ones.
+> Roadmap: more Western voices (detectives, wizards, pirates…) and the rest of the Chinese classics.
 
-## 设计理念：存"语言指纹"，不是"性格标签"
+## Design idea: store the *fingerprint*, not the *label*
 
-如果只写"猪八戒：贪吃、懒惰"，AI 写出来还是 AI 味——那是**性格**，不是**怎么说话**。
-让人一眼认出的是具体的**语言痕迹**：自称"老猪"、口头禅"散伙"、市井比喻、遇事先退缩讲条件。
+"Sherlock: smart, arrogant" gives you nothing — that's a personality label. What makes a voice recognizable is the concrete linguistic trace: the clipped deduction, "you see but you do not observe," the inferential chain.
 
-所以每个角色画像的重心是 **语言指纹 + 真实台词样本（标注原著/影视来源）+ before/after 改写示范**。台词只收能对上回目的原著引文或广为人知的影视台词，并**标清出处**，不凭印象编。
+So every profile centers on **linguistic fingerprint + real quotes (source-labeled) + a before/after rewrite demo**. Quotes are only kept if they're verifiable canon or widely-known popular lines, each marked with its source.
 
-## 缺你爱的角色？欢迎贡献 🙌
+## Want a character that's missing? Contribute 🙌
 
-加一个角色只要三步，模板都给你备好了：
+Three steps, template included:
 
-1. 在 `personas/<书名>/` 下新建 `<角色>.md`，照 [`SKILL.md`](./SKILL.md) 里的「角色画像模板」填。
-2. 在 `SKILL.md` 的《角色索引》加一行。
-3. `VERSION` 升一位 + `CHANGELOG.md` 顶部写一行新增了谁。
+1. Add `<character>.md` under `personas/<source>/`, following the template in [`SKILL.md`](./SKILL.md).
+2. Add a row to the character index in `SKILL.md`.
+3. Bump `VERSION` and add a `CHANGELOG.md` line.
 
-台词记得标来源、能对上原著最好。提个 PR 就行，让我们一起把这个面具库做厚。
+Label your sources. Open a PR — let's grow the mask library together.
 
 ## License
 

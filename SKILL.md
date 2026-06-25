@@ -2,9 +2,12 @@
 name: mask
 description: >-
   戴上名人/名角色的"面具"来写文案——让输出一眼认出是谁，彻底去掉 AI 味。
-  当用户说"用 X 的口吻/性格写""以 X 的语气改写""模仿 X 说话""让这段像 X 说的"
-  （X 为孙悟空、猪八戒、唐僧、牛魔王、红孩儿等角色）时触发。
-  核心是注入真人/角色的"语言指纹"（自称、口头禅、句式、用词），而不是套性格标签。
+  Write or rewrite copy in the unmistakable voice of a famous character — kill the AI tone.
+  当用户说"用 X 的口吻/性格写""以 X 改写""模仿 X"，或 "write like X" / "in the voice of X" /
+  "rewrite this as X" 时触发。中文角色：孙悟空、猪八戒、唐僧、牛魔王、红孩儿、林黛玉、王熙凤、
+  张飞、诸葛亮、鲁智深。English: Sherlock Holmes, Yoda, Shakespeare.
+  核心是注入角色的"语言指纹"（自称、口头禅、句式、用词），而不是套性格标签 — inject the
+  character's linguistic fingerprint, not personality labels.
 ---
 
 # mask — 戴上谁的面具，就说谁的话
@@ -45,6 +48,10 @@ AI 写的文案总有"AI 味"：要么太刚，要么太柔，没有真人那种
 
 ## 角色索引
 
+**语言匹配文化**：中文文案用中文角色，English copy uses the English characters. 英文角色的画像与输出都用英文。
+
+### 中文角色
+
 | 角色 | 一眼认出的点 | 画像文件 |
 |---|---|---|
 | 孙悟空 | 傲娇毒舌、自报名号、天不怕地不怕 | `personas/西游记/孙悟空.md` |
@@ -52,11 +59,25 @@ AI 写的文案总有"AI 味"：要么太刚，要么太柔，没有真人那种
 | 唐僧 | 婆妈说教、阿弥陀佛、念紧箍咒 | `personas/西游记/唐僧.md` |
 | 牛魔王 | 妖界大哥气、讲辈分义气、护家要面子 | `personas/西游记/牛魔王.md` |
 | 红孩儿 | 妖二代中二、三昧真火、占辈分便宜 | `personas/西游记/红孩儿.md` |
+| 林黛玉 | 敏感刻薄、使小性子、清雅带醋意 | `personas/红楼梦/林黛玉.md` |
+| 王熙凤 | 泼辣精明、八面玲珑、笑里藏刀 | `personas/红楼梦/王熙凤.md` |
+| 张飞 | 炸毛粗豪、大嗓门、"燕人张翼德" | `personas/三国演义/张飞.md` |
+| 诸葛亮 | 从容睿智、运筹文雅、临危不乱 | `personas/三国演义/诸葛亮.md` |
+| 鲁智深 | 鲁莽豪爽、"洒家"、路见不平 | `personas/水浒传/鲁智深.md` |
+
+### English characters
+
+| Character | The instantly-recognizable cue | Profile |
+|---|---|---|
+| Sherlock Holmes | clipped deduction, condescending precision | `personas/English/Sherlock Holmes.md` |
+| Yoda | inverted syntax, cryptic calm | `personas/English/Yoda.md` |
+| Shakespeare | thee/thou, soliloquy, dramatic flourish | `personas/English/Shakespeare.md` |
 
 ## 数据原则（重要）
 
 - 台词样本只收**能对上回目的原著引文**或**广为人知的影视/大众认知台词**，并**标注来源**：`【原著·第X回】` / `【影视/大众认知】`。
 - 识别度往往靠大众认知台词（如孙悟空"俺老孙"其实是影视说法，原著多用"老孙/我"）。两者都收，但**标清出处**，不混为原著。
+- English profiles label sources as `【canon — <work>】` / `【popular / screen】`, same principle.
 
 ## 怎么加新角色（扩展）
 
