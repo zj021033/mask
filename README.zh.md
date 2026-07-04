@@ -14,6 +14,12 @@ AI 写的文案总有股"AI 味"：要么太刚，要么太柔，没有真人那
 
 ## 安装
 
+最快方式：
+
+```bash
+npx skills add zj021033/mask --skill mask
+```
+
 ```bash
 git clone https://github.com/zj021033/mask ~/.claude/skills/mask
 ```

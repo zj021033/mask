@@ -14,6 +14,12 @@ AI-written copy always has a tell: too stiff or too soft, never the lived-in voi
 
 ## Install
 
+Fastest path:
+
+```bash
+npx skills add zj021033/mask --skill mask
+```
+
 ```bash
 git clone https://github.com/zj021033/mask ~/.claude/skills/mask
 ```
