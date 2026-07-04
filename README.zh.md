@@ -1,12 +1,38 @@
-# 🎭 mask — 给 AI 文案戴上名角色的面具
+# 🎭 mask — 让 AI 文案不再一股 AI 味
 
 [English](./README.md) | **中文**
 
-> 同一句话，多个面具，多种味。彻底告别"AI 腔"。
+> 同一句话，多个面具，多种味。一个 Claude Code skill，用角色级语言指纹改写平庸 AI 文案。
+
+[安装](#安装) · [20 秒试用](#20-秒试用) · [当前角色](#当前角色v110) · [贡献角色](#缺你爱的角色欢迎贡献-)
+
+如果它让你的一段 AI 文案终于像真人说话，欢迎 star，让更多写作者和 AI builder 找到它。
 
 AI 写的文案总有股"AI 味"：要么太刚，要么太柔，没有真人那种不卑不亢、有性格有分寸的感觉。
 
 `mask` 是一个 [Claude Code](https://claude.com/claude-code) skill。你指定"用某个角色的口吻写/改写"，它就调出那个角色的**语言指纹**（自称、口头禅、句式、用词），让输出一眼认出是谁。
+
+## 安装
+
+```bash
+git clone https://github.com/zj021033/mask ~/.claude/skills/mask
+```
+
+后续更新：
+
+```bash
+cd ~/.claude/skills/mask && git pull
+```
+
+只想装单文件：
+
+```bash
+mkdir -p ~/.claude/skills/mask
+curl -o ~/.claude/skills/mask/SKILL.md \
+  https://raw.githubusercontent.com/zj021033/mask/main/SKILL.md
+```
+
+Cursor、Codex 类 CLI agent、Gemini CLI 或纯聊天，也可以直接把 [`SKILL.md`](./SKILL.md) 放进 rules / `AGENTS.md` / system prompt。
 
 ## 一眼看懂它能干嘛
 
@@ -21,6 +47,28 @@ AI 写的文案总有股"AI 味"：要么太刚，要么太柔，没有真人那
 | 🪭 **诸葛亮** | 诸位今日辛苦。亮以为，今日之功只是开端，来日还需同心——且各自将养，静候后议便是。 |
 
 > 还有：牛魔王、红孩儿、王熙凤、张飞、鲁智深。English speakers see the [English README](./README.md).
+
+更多示例：
+
+- [同一句话，五种面具](./examples/same-line-five-masks.md)
+
+## 20 秒试用
+
+装好后直接粘贴：
+
+```text
+用孙悟空的口吻改写：感谢大家等待，新版本已经上线，你反馈的 bug 也修好了。
+```
+
+```text
+用林黛玉的语气写一条朋友圈，主题是周一早会。
+```
+
+```text
+以诸葛亮的口吻写一封项目复盘邮件，短一点。
+```
+
+重点不是“搞笑”，而是在保留原意的基础上，把泛泛的 AI 腔替换成具体、稳定、可识别的声音。
 
 ## 怎么用
 
@@ -59,6 +107,13 @@ AI 写的文案总有股"AI 味"：要么太刚，要么太柔，没有真人那
 3. `VERSION` 升一位 + `CHANGELOG.md` 顶部写一行新增了谁。
 
 台词记得标来源、能对上原著最好。提个 PR 就行，让我们一起把这个面具库做厚。
+
+适合第一次贡献的方向：
+
+- 公版文学角色
+- 有明确语料来源的历史/地域风格
+- 给已有角色补 before/after 示例
+- 把已有画像写得更短、更准、更一眼认出
 
 ## License
 
